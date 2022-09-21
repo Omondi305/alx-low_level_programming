@@ -1,63 +1,53 @@
-include "main.h"
+#include "main.h"                                                                                                                    
 
-/**
+                                                                                                                                     
 
- * cap_string - capitalizes all words of a string
+/**                                                                                                                                  
 
- * @s: input string.
+ * _strncpy - Copies at most an inputted number                                                                                      
 
- * Return: the pointer to dest.
+ *            of bytes from string src into dest.                                                                                    
 
- */
+ * @dest: The buffer storing the string copy.                                                                                        
 
+ * @src: The source string.                                                                                                          
 
+ * @n: The maximum number of bytes to copied from src.                                                                               
 
-char *cap_string(char *s)
+ *                                                                                                                                   
 
-{
+ * Return: A pointer to the resulting string dest.                                                                                   
 
-	int count = 0, i;
+ */                                                                                                                                  
 
-	int sep_words[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+char *_strncpy(char *dest, char *src, int n)                                                                                         
 
+{                                                                                                                                    
 
+        int index = 0, src_len = 0;                                                                                                  
 
-	if (*(s + count) >= 97 && *(s + count) <= 122)
+                                                                                                                                     
 
-		*(s + count) = *(s + count) - 32;
+        while (src[index++])                                                                                                         
 
-	count++;
+                src_len++;                                                                                                           
 
-	while (*(s + count) != '\0')
+                                                                                                                                     
 
-	{
+        for (index = 0; src[index] && index < n; index++)                                                                            
 
-		for (i = 0; i < 13; i++)
+                dest[index] = src[index];                                                                                            
 
-		{
+                                                                                                                                     
 
-			if (*(s + count) == sep_words[i])
+        for (index = src_len; index < n; index++)                                                                                    
 
-			{
+                dest[index] = '\0';                                                                                                  
 
-				if ((*(s + (count + 1)) >= 97) && (*(s + (count + 1)) <= 122))
+                                                                                                                                     
 
-					*(s + (count + 1)) = *(s + (count + 1)) - 32;
-
-				break;
-
-			}
-
-		}
-
-		count++;
-
-	}
-
-	return (s);
+        return (dest);                                                                                                               
 
 }
-
-
 
 
