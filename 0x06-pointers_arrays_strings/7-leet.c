@@ -1,46 +1,47 @@
+#include "main.h"
 
 
-#include "main.h"                                                                                                                    
 
-                                                                                                                                     
+/**
 
-/**                                                                                                                                  
+ * leet - encodes a string into 1337
 
- * reverse_array - Reverses the content of an array of integers.                                                                     
+ * @s: string to encode
 
- * @a: The array of integers to be reversed.                                                                                         
+ *
 
- * @n: The number of elements in the array.                                                                                          
+ * Return: address of s
 
- */                                                                                                                                  
+ */
 
-void reverse_array(int *a, int n)                                                                                                    
+char *leet(char *s)
 
-{                                                                                                                                    
+{
 
-        int tmp, index;                                                                                                              
+	int i, j;
 
-                                                                                                                                     
+	char a[] = "aAeEoOtTlL";
 
-        for (index = n - 1; index >= n / 2; index--)                                                                                 
+	char b[] = "4433007711";
 
-        {                                                                                                                            
 
-                tmp = a[n - 1 - index];                                                                                              
 
-                a[n - 1 - index] = a[index];                                                                                         
+	for (i = 0; *(s + i); i++)
 
-                a[index] = tmp;                                                                                                      
+	{
 
-        }                                                                                                                            
+		for (j = 0; j <= 9; j++)
+
+		{
+
+			if (a[j] == *(s + i))
+
+				*(s + i) = b[j];
+
+		}
+
+	}
+
+	return (s);
 
 }
-
-
-
-
-
-
-
-
-
