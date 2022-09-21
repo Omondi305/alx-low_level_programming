@@ -1,4 +1,4 @@
-#include "main.h"
+include "main.h"
 
 /**
 
@@ -57,5 +57,7 @@ char *cap_string(char *s)
 	return (s);
 
 }
+
+
 
 
